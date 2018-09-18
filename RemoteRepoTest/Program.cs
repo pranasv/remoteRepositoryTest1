@@ -10,6 +10,7 @@ namespace RemoteRepoTest
     {
         static void Main(string[] args)
         {
+            //pakeitimas
         }
     }
 }
