@@ -13,9 +13,10 @@ namespace RemoteRepoTest
 
             //exercise1();
             //exercise2();
-            // uzduotis_nr3();
-            uzduotis_nr4();
-
+            //uzduotis_nr3();
+            // uzduotis_nr4();
+            //masyvai1();
+            masyvai2();
 
 
         }
@@ -114,7 +115,49 @@ namespace RemoteRepoTest
         {
            // return random(20);
         }
-        
+        static void masyvai1()
+        {
+            string[] zodziai = new string[5];
+            for (int i = 0; i<5; i++)
+            {
+                Console.WriteLine("iveskite "+(i+1)+" eilute");
+                zodziai[i] = Console.ReadLine();
+            }
+            for (int i = 0; i <5; i++)
+            {
+                Console.Write(zodziai[i]+" ");
+            }
+            Console.WriteLine();
+            for (int i = zodziai.Length-1; i >= 0; i--)
+            {
+                Console.Write(zodziai[i] + " ");
+            }
+            Console.ReadKey();
+        }
+        static void masyvai2 ()
+        {
+            string[] data = {"Mano","Batai","Buvo", "Mano", "Batai", "Buvo","Du", "Buvo", "Du","." };
+            pakeisti_dublikatus(data); // "ref" pries kintamaji nereikia, nes masyvai funkcijoje veikia "Pass by reference" principu
+            for (int i = 0; i<data.Length; i++ )
+            {
+                Console.Write(data[i]+" ");
+            }
+            Console.ReadKey();
+        }
+        static void pakeisti_dublikatus (string[] arr)
+        {
+            for(int i=0; i<arr.Length;i++)
+            {
+               
+                for (int n=i+1; n< arr.Length;n++)
+                {
+                    if (arr[i]==arr[n])
+                    {                        
+                        arr[n] = "!";
+                    }
+                }
+            }
+        }
 
     }
 }
