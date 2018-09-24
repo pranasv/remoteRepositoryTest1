@@ -10,17 +10,8 @@ namespace RemoteRepoTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("iveskite skaiciu:");
-            int sk = Convert.ToInt32(Console.ReadLine());
-            if (IsPrimal(sk))
-            {
-                Console.WriteLine("skaicius yra pirminis");
-            }
-            else
-            {
-                Console.WriteLine("skaicius nera pirminis");
-            }
-            Console.ReadKey();
+            // uzduotis_nr3();
+            uzduotis_nr4();
         }
         static bool IsPrimal(int sk)
         {
@@ -35,5 +26,30 @@ namespace RemoteRepoTest
             
 
         }
+        static void uzduotis_nr3()
+        {
+            Console.WriteLine("iveskite skaiciu:");
+            int sk = Convert.ToInt32(Console.ReadLine());
+            if (IsPrimal(sk))
+            {
+                Console.WriteLine("skaicius yra pirminis");
+            }
+            else
+            {
+                Console.WriteLine("skaicius nera pirminis");
+            }
+            Console.ReadKey();
+        }
+        static void uzduotis_nr4()
+        {
+            Console.WriteLine("random 1..20: " + D20);
+            Console.ReadKey();
+        }
+        static int D20()
+        {
+           // return random(20);
+        }
+        
+
     }
 }
