@@ -10,29 +10,30 @@ namespace RemoteRepoTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("skaicius 1:");
-            int sk1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("skaicius 2:");
-            int sk2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("skaicius 3:");
-            int sk3 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Didziausias skaicius yra "+max(sk1, sk2, sk3));
-            Console.ReadKey();
-        }
-        static int max(int sk1, int sk2, int sk3)
-        {
-            if (sk1 > sk2 && sk1 > sk3)
+            Console.WriteLine("iveskite skaiciu:");
+            int sk = Convert.ToInt32(Console.ReadLine());
+            if (IsPrimal(sk))
             {
-                return sk1;
-            }
-            else if (sk2 > sk1 && sk2 > sk3)
-            {
-                return sk2;
+                Console.WriteLine("skaicius yra pirminis");
             }
             else
             {
-                return sk3;
+                Console.WriteLine("skaicius nera pirminis");
             }
+            Console.ReadKey();
+        }
+        static bool IsPrimal(int sk)
+        {
+                for (int i = 2; i<sk; i++)
+                {
+                    if (sk % i == 0)
+                    {
+                    return false;
+                    }
+                }                          
+            return true;
+            
+
         }
     }
 }
