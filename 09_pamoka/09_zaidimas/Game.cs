@@ -8,11 +8,7 @@ namespace _09_zaidimas
 {
     class Game
     {
-        static void Main(string[] args)
-        {
-            StartGame();
-        }
-        static void StartGame()
+        static void StartGame()       
         {
             GameScreen MyGame = new GameScreen(100, 30);
             Hero Player = new Hero(50, 30, "Player1");

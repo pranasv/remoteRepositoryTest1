@@ -8,6 +8,9 @@ namespace _09_zaidimas
 {
     class Program
     {
-        
+        static void Main(string[] args)
+        {
+            
+        }
     }
 }
