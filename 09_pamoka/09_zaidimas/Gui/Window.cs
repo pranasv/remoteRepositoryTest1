@@ -17,7 +17,7 @@ namespace _09_zaidimas.GUI
             this.height=height;
             Border = new Frame(this.x,this.y,this.width,this.height,symbol);
         }        
-        public void Render()
+        public virtual void Render()
         {
             Border.Render();
         }

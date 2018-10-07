@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _09_zaidimas.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace _09_zaidimas
 {
-    class GameScreen
+    class GameScreen : Window
     {
         private int Width;
         private int Height;
         private Hero hero;
         private List<Enemy> enemies = new List<Enemy>();
 
-        public GameScreen(int x, int y)
+        public GameScreen(int x, int y) : base(0, 0, x, y,'#')
         {
             Width = x;
             Height = y;
@@ -48,13 +49,15 @@ namespace _09_zaidimas
             }
             return null;
         }
-        public void Render()
+        public override void Render()
         {
-        	hero.PrintInfo();
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.PrintInfo();
-            }
+            base.Render();
+            //hero.PrintInfo();
+            //foreach (Enemy enemy in enemies)
+            //{
+            //    enemy.PrintInfo();
+            //}
+            hero.Render();
         }
     }
 }

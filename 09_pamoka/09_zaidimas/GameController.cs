@@ -18,6 +18,7 @@ namespace _09_zaidimas
             bool NeedToRender = true;
             do
             {
+                gameWindow.ActivateCurrentButtonSelection();
                 gameWindow.Render();
                 keyPressed = Console.ReadKey(true);
                 switch (keyPressed.Key)
@@ -52,7 +53,7 @@ namespace _09_zaidimas
         private void StartGame()
         {
             // init game
-            GameScreen myGame = new GameScreen(30, 20);
+            GameScreen myGame = new GameScreen(120, 30);
 
             // fill game with game data.
             myGame.SetHero(new Hero(5, 5, "HERO"));

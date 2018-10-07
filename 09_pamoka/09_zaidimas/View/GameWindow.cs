@@ -46,7 +46,7 @@ namespace _09_zaidimas.GUI
             }
         }
 
-        private void ActivateCurrentButtonSelection()
+        public void ActivateCurrentButtonSelection()
         {
             for (int i = 0; i < AllButtons.Count; i++)
             {

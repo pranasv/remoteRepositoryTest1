@@ -20,7 +20,12 @@ namespace _09_zaidimas
         public void MoveLeft()
         {            
                 x--; 
-        }      
+        }
 
+        public  void Render()
+        {
+            Console.SetCursorPosition(x,y);
+            Console.Write("@");
+        }
     }
 }
