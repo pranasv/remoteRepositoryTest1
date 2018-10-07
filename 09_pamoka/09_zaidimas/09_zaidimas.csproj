@@ -44,11 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game\Enemy.cs" />
-    <Compile Include="Game\GameController.cs" />
+    <Compile Include="GameController.cs" />
     <Compile Include="Gui\Button.cs" />
     <Compile Include="View\CreditWindow.cs" />
     <Compile Include="Gui\Frame.cs" />
-    <Compile Include="Game.cs" />
     <Compile Include="Game\GameScreen.cs" />
     <Compile Include="View\GameWindow.cs" />
     <Compile Include="Gui\GuiObject.cs" />

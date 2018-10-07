@@ -36,7 +36,7 @@ namespace _09_zaidimas.GUI
             BackButton = new Button(28 + 20, 10 + 14, 18, 3, "Back");
             BackButton.SetActive();
 
-            Render();
+            //Render();
         }
 
         public new void Render()

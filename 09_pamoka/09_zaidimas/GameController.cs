@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _09_zaidimas.Game
+namespace _09_zaidimas
 {
     class GameController
     {
@@ -15,6 +15,7 @@ namespace _09_zaidimas.Game
         public void ShowMenu()
         {
             ConsoleKeyInfo keyPressed;
+            bool NeedToRender = true;
             do
             {
                 gameWindow.Render();
@@ -22,14 +23,31 @@ namespace _09_zaidimas.Game
                 switch (keyPressed.Key)
                 {                                           
                     case ConsoleKey.LeftArrow:
-                        gameWindow.SellectNextMenuItem();
+                        gameWindow.SellectPrevMenuItem();
                         break;
                     case ConsoleKey.RightArrow:
                         gameWindow.SellectNextMenuItem();
                         break;
+                    case ConsoleKey.Enter:
+                        switch (gameWindow.GetCurrentSelection())
+                        {
+                            case 0:
+                                StartGame();
+                                break;
+                            case 1:
+                                crediteWindow.Render();
+                                break;
+                            case 2:
+                                NeedToRender = false;
+                                break;
+                        }                        
+                        break;
+                    case ConsoleKey.Escape:
+                        NeedToRender = false;
+                        break;
 
                 }
-            } while (keyPressed.Key != ConsoleKey.Escape);
+            } while (NeedToRender);
         }
         private void StartGame()
         {
@@ -78,6 +96,6 @@ namespace _09_zaidimas.Game
 
                 System.Threading.Thread.Sleep(250);
             } while (needToRender);
-        }
+        } 
     }
 }

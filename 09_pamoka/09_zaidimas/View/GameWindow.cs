@@ -6,30 +6,77 @@ using System.Threading.Tasks;
 
 namespace _09_zaidimas.GUI
 {
-    class GameWindow:Window
+    class GameWindow : Window
     {
-        private Button StartButton;
-        private Button CreditsButton;
-        private Button QuitButton;
+        //private Button StartButton;
+        // private Button CreditsButton;
+        // private Button QuitButton;
+        private List<Button> AllButtons = new List<Button>();
+        private int CurrentSelection = 0;
         private TextBlock TitleTextBlock;
-        public GameWindow ():base(0, 0, 120, 30, '%')
+        public GameWindow() : base(0, 0, 120, 30, '%')
         {
             TitleTextBlock = new TextBlock(2, 5, 114, 30, new List<String> { "Super duper zaidimas", "Prano Vaiciaus kuryba!", "Made in Vilnius Coding School!" });
 
-            StartButton = new Button(20, 13, 18, 5, "Start");
-            StartButton.SetActive();
-            CreditsButton = new Button(50, 13, 18, 5, "Credits");
-            QuitButton = new Button(80, 13, 18, 5, "Quit");
-            base.Render();
+            AllButtons.Add(new Button(20, 13, 18, 5, "Start"));
+            AllButtons.Add(new Button(50, 13, 18, 5, "Credits"));
+            AllButtons.Add(new Button(80, 13, 18, 5, "Quit"));
+
         }
+        public void SellectNextMenuItem()
+        {
+            if (CurrentSelection < AllButtons.Count - 1)
+            {
+                CurrentSelection++;
+                ActivateCurrentButtonSelection();
+            }
+        }
+
+        public int GetCurrentSelection()
+        {
+            return CurrentSelection;
+        }
+
+        public void SellectPrevMenuItem()
+        {
+            if (CurrentSelection > 0)
+            {
+                CurrentSelection--;
+                ActivateCurrentButtonSelection();
+            }
+        }
+
+        private void ActivateCurrentButtonSelection()
+        {
+            for (int i = 0; i < AllButtons.Count; i++)
+            {
+                Button btn = AllButtons[i];
+                if (i == CurrentSelection)
+                {
+                    btn.SetActive();
+                }
+                else
+                {
+                    btn.SetNotActive();
+                }
+
+
+
+            }
+        }
+
+
         public new void Render()
         {
             base.Render();
             TitleTextBlock.Render();
-            StartButton.Render();
-            CreditsButton.Render();
-            QuitButton.Render();
+            foreach (Button btn in AllButtons)
+            {
+                btn.Render();
+
+            }
             Console.SetCursorPosition(0, 0);
+
         }
 
 
