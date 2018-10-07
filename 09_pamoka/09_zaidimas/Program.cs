@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _09_zaidimas.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,11 @@ namespace _09_zaidimas
     {
         static void Main(string[] args)
         {
-            
+            Console.CursorVisible = false;
+            GameController gameController = new GameController();
+           
+            Console.ReadKey();
+               
         }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CC1FD77-3AA0-4FBF-B225-5874CBC3A11C}</ProjectGuid>
+    <ProjectGuid>{B6A20C2E-2BAD-4E11-B02A-03843E392A64}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_09_zaidimas</RootNamespace>
-    <AssemblyName>09_zaidimas</AssemblyName>
+    <RootNamespace>_10_pamoka</RootNamespace>
+    <AssemblyName>10_pamoka</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,22 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game\Enemy.cs" />
-    <Compile Include="Game\GameController.cs" />
-    <Compile Include="Gui\Button.cs" />
-    <Compile Include="View\CreditWindow.cs" />
-    <Compile Include="Gui\Frame.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Game\GameScreen.cs" />
-    <Compile Include="View\GameWindow.cs" />
-    <Compile Include="Gui\GuiObject.cs" />
-    <Compile Include="Gui\TextBlock.cs" />
-    <Compile Include="Gui\TextLine.cs" />
-    <Compile Include="Game\Hero.cs" />
+    <Compile Include="Child.cs" />
+    <Compile Include="Parent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Game\Unit.cs" />
-    <Compile Include="Gui\Window.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
